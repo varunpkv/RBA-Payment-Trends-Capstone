@@ -29,8 +29,8 @@ The project uses four official RBA datasets. All files were merged on the `Date`
 | C05  | CCQCTVSA            | `Cheques_Value`                   | Total value of cheque transactions |
 | C06  | CCDEPNPPTNSA        | `NPP_Total_Count`                 | Total number of NPP (instant) payments |
 | C06  | CCDEPNPPTVSA        | `NPP_Total_Value`                 | Total value of NPP payments |
-| C06  | -                   | `Direct_Entry_Total_Count`        | Total number of direct entry payments (credit + debit transfers) |
-| C06  | -                   | `Direct_Entry_Total_Value`        | Total value of direct entry payments |
+| C06  | CCDEPDEPTNSA        | `Direct_Entry_Total_Count`        | Total number of direct entry payments (credit + debit transfers) |
+| C06  | CCDEPDEPTVSA        | `Direct_Entry_Total_Value`        | Total value of direct entry payments |
 
 ---
 
