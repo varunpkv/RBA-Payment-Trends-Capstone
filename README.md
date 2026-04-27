@@ -1,83 +1,53 @@
 # RBA Payment Trends: Forecasting and Shift Detection
 
-**Capstone Project**  
-Master of Science in Artificial Intelligence and Machine Learning  
-Walsh University
+**Walsh University Capstone Project**  
+Master of Science in Artificial Intelligence and Machine Learning
 
 ---
 
 ## Project Overview
 
-This project analyses official monthly retail payment statistics published by the Reserve Bank of Australia (RBA). The main objectives are:
-
-- To forecast the growth of NPP (instant payments) versus traditional payment methods (cash and cheques).
-- To detect unexpected shifts or changes in payment behaviour over time.
+This project analyses official monthly retail payment statistics published by the Reserve Bank of Australia (RBA). The main objective is to understand the ongoing shift from traditional payment methods (cash and cheques) to modern digital payments, especially the New Payments Platform (NPP).
 
 ---
 
 ## Data Description
 
-The project uses four official RBA datasets. All files were merged on the **Date** column to create one clean monthly dataframe.
+The project uses four official RBA datasets. All files were merged on the `Date` column. Below are the selected columns used in the analysis:
 
-### 1. C6 - NPP & Direct Entry Payments
-**File:** `C6-Monthly-payment-trends.xlsx`  
-**Description:** Contains data on New Payments Platform (instant payments) and Direct Entry transactions.
+### Selected Columns
 
-**Selected Columns:**
-- `Date` — Monthly observation date
-- `NPP_Total_Txns_NSA` — Total number of NPP transactions (Not Seasonally Adjusted)
-- `NPP_Total_Txns_SA` — Total number of NPP transactions (Seasonally Adjusted)
-- `Cards_Total_Txns_NSA` — Total number of card transactions (Not Seasonally Adjusted)
-- `Cards_Total_Txns_SA` — Total number of card transactions (Seasonally Adjusted)
-
-### 2. C1 - Credit & Charge Cards
-**File:** `C1-Cards.xlsx`  
-**Description:** Detailed statistics on credit and charge card activity.
-
-**Selected Columns:**
-- `Date` — Monthly observation date
-- `Credit_Cards_Active_Accounts_NSA` — Number of active credit and charge card accounts
-- `Credit_Cards_Purchases_Count_NSA` — Number of purchases using credit/charge cards
-- `Credit_Cards_Purchases_Value_SA` — Value of purchases using credit/charge cards (Seasonally Adjusted)
-- `Total_Cards_Txns_Count_NSA` — Total number of card transactions
-- `Total_Cards_Txns_Value_SA` — Total value of card transactions (Seasonally Adjusted)
-
-### 3. C4 - ATM Cash Withdrawals
-**File:** `C4-Cash-Withdrawals.xlsx`  
-**Description:** Statistics on cash withdrawals from ATMs.
-
-**Selected Columns:**
-- `Date` — Monthly observation date
-- `Cash_Total_Txns_NSA` — Total number of ATM cash withdrawals
-- `Cash_Total_Value_SA` — Total value of ATM cash withdrawals (Seasonally Adjusted)
-- `Cash_FI_Txns_NSA` — Cash withdrawals from Financial Institutions
-- `Cash_Other_Txns_NSA` — Cash withdrawals from Other providers
-- `Cash_CreditCard_Txns_NSA` — Cash withdrawals using Credit Cards
-
-### 4. C5 - Cheques
-**File:** `C5-Cheques.xlsx`  
-**Description:** Statistics on cheque transactions.
-
-**Selected Columns:**
-- `Date` — Monthly observation date
-- `Cheques_Total_Txns_NSA` — Total number of cheque transactions
-- `Cheques_Total_Value_SA` — Total value of cheque transactions (Seasonally Adjusted)
-- `Cheques_Processed_Txns_NSA` — Number of cheques processed by banks
-- `Cheques_Processed_Value_SA` — Value of cheques processed by banks
+| File | Original Code       | Modified Column Name              | Description |
+|------|---------------------|-----------------------------------|-----------|
+| C01  | CCCCSTPNSA          | `Credit_Purchases_Count`          | Number of purchases made using credit and charge cards |
+| C01  | CCCCSTPVSA          | `Credit_Purchases_Value`          | Value of purchases made using credit and charge cards |
+| C01  | CCCCSTTNSA          | `Total_Cards_Transactions_Count`  | Total number of card transactions |
+| C01  | CCCCSTTVSA          | `Total_Cards_Transactions_Value`  | Total value of card transactions |
+| C04  | CACWTNSA            | `Cash_Withdrawal_Count`           | Total number of cash withdrawals (mainly debit cards) |
+| C04  | CACWTVSA            | `Cash_Withdrawal_Value`           | Total value of cash withdrawals |
+| C05  | CCQCTNSA            | `Cheques_Count`                   | Total number of cheque transactions |
+| C05  | CCQCTVSA            | `Cheques_Value`                   | Total value of cheque transactions |
+| C06  | CCDEPNPPTNSA        | `NPP_Total_Count`                 | Total number of NPP (instant) payments |
+| C06  | CCDEPNPPTVSA        | `NPP_Total_Value`                 | Total value of NPP payments |
+| C06  | -                   | `Direct_Entry_Total_Count`        | Total number of direct entry payments (credit + debit transfers) |
+| C06  | -                   | `Direct_Entry_Total_Value`        | Total value of direct entry payments |
 
 ---
 
-## Notebooks
+## Key Focus Areas
 
-- `Walsh_Capstone.ipynb` — Main analysis notebook (data cleaning, EDA, modeling)
+- Growth of **NPP (Instant Payments)**
+- Performance of **Credit and Debit Cards**
+- Decline in **Cash Withdrawals** and **Cheques**
+- Comparison between modern digital payments vs traditional methods
 
 ---
 
 ## Technologies Used
 
 - Python, Pandas, NumPy
+- Matplotlib & Seaborn (Visualization)
 - Scikit-learn, XGBoost
-- TensorFlow / Keras (LSTM Autoencoder)
-- Matplotlib & Seaborn (visualization)
+- TensorFlow/Keras (LSTM Autoencoder)
 
 ---
