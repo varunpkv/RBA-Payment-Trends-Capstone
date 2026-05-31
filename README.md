@@ -11,6 +11,11 @@ This project analyses official monthly retail payment statistics published by th
 
 ---
 
+### 📌 Notebook viewing 
+GitHub sometimes fails to render large Jupyter notebooks. If the notebook doesn’t load, please open it using the nbviewer link provided in the report.
+
+---
+
 ## Data Description
 
 The project uses four official RBA datasets. All files were merged on the `Date` column. Below are the selected columns and the feature Engineered columns used in the analysis:
@@ -85,8 +90,5 @@ The project uses four official RBA datasets. All files were merged on the `Date`
 - Matplotlib & Seaborn (Visualization)
 - Scikit-learn, XGBoost
 - TensorFlow/Keras (LSTM Autoencoder)
-
-### 📌 Notebook viewing 
-GitHub sometimes fails to render large Jupyter notebooks. If the notebook doesn’t load, please open it using the nbviewer link provided in the report.
 
 ---
