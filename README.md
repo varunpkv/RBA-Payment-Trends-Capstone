@@ -86,4 +86,7 @@ The project uses four official RBA datasets. All files were merged on the `Date`
 - Scikit-learn, XGBoost
 - TensorFlow/Keras (LSTM Autoencoder)
 
+### 📌 Notebook viewing 
+GitHub sometimes fails to render large Jupyter notebooks. If the notebook doesn’t load, please open it using the nbviewer link provided in the report.
+
 ---
